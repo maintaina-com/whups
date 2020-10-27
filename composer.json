@@ -1,64 +1,73 @@
 {
     "name": "horde/whups",
     "description": "Ticket-tracking application",
-    "type": "project",
+    "type": "horde-application",
     "homepage": "https://www.horde.org/apps/whups",
     "license": "BSD-2-Clause",
     "authors": [
         {
-            "name": "Chuck Hagenbuch",
-            "email": "chuck@horde.org",
+            "name": "Jan Schneider",
+            "email": "jan@horde.org",
             "role": "lead"
         },
         {
-            "name": "Jan Schneider",
-            "email": "jan@horde.org",
+            "name": "Chuck Hagenbuch",
+            "email": "chuck@horde.org",
             "role": "lead"
         }
     ],
     "version": "4.0.0",
-    "time": "2017-11-11",
+    "time": "2020-10-27",
     "repositories": [
         {
-            "type": "pear",
-            "url": "https://pear.horde.org"
+            "type": "composer",
+            "url": "https://horde-satis.maintaina.com"
         }
     ],
     "require": {
+        "horde/horde-installer-plugin": "dev-master",
         "php": "^5.3 || ^7",
-        "pear-pear.horde.org/horde": "^5",
-        "pear-pear.horde.org/Horde_Auth": "^2",
-        "pear-pear.horde.org/Horde_Autoloader": "^2",
-        "pear-pear.horde.org/Horde_Compress": "^2",
-        "pear-pear.horde.org/Horde_Core": "^2.30",
-        "pear-pear.horde.org/Horde_Date": "^2",
-        "pear-pear.horde.org/Horde_Db": "^2",
-        "pear-pear.horde.org/Horde_Exception": "^2",
-        "pear-pear.horde.org/Horde_Form": "^2",
-        "pear-pear.horde.org/Horde_Group": "^2",
-        "pear-pear.horde.org/Horde_Mail": "^2",
-        "pear-pear.horde.org/Horde_Mime": "^2.10",
-        "pear-pear.horde.org/Horde_Mime_Viewer": "^2",
-        "pear-pear.horde.org/Horde_Notification": "^2",
-        "pear-pear.horde.org/Horde_Perms": "^2",
-        "pear-pear.horde.org/Horde_Prefs": "^2",
-        "pear-pear.horde.org/Horde_Scheduler": "^2",
-        "pear-pear.horde.org/Horde_Share": "^2",
-        "pear-pear.horde.org/Horde_Support": "^2",
-        "pear-pear.horde.org/Horde_Text_Filter": "^2",
-        "pear-pear.horde.org/Horde_Util": "^2",
-        "pear-pear.horde.org/Horde_Vfs": "^2",
-        "pear-pear.horde.org/Horde_View": "^2",
+        "horde/horde": "dev-master",
+        "horde/auth": "dev-master",
+        "horde/autoloader": "dev-master",
+        "horde/compress": "dev-master",
+        "horde/core": "dev-master",
+        "horde/date": "dev-master",
+        "horde/db": "dev-master",
+        "horde/exception": "dev-master",
+        "horde/form": "dev-master",
+        "horde/group": "dev-master",
+        "horde/mail": "dev-master",
+        "horde/mime": "dev-master",
+        "horde/mime_viewer": "dev-master",
+        "horde/notification": "dev-master",
+        "horde/perms": "dev-master",
+        "horde/prefs": "dev-master",
+        "horde/scheduler": "dev-master",
+        "horde/share": "dev-master",
+        "horde/support": "dev-master",
+        "horde/text_filter": "dev-master",
+        "horde/util": "dev-master",
+        "horde/vfs": "dev-master",
+        "horde/view": "dev-master",
         "ext-gettext": "*",
         "ext-json": "*"
     },
-    "replace": {
-        "pear-pear.horde.org/whups": "4.*",
-        "pear-horde/whups": "4.*"
-    },
+    "suggest": {},
     "autoload": {
         "psr-0": {
             "Whups": "lib/"
         }
-    }
+    },
+    "bin": [
+        "bin/whups-svn-hook",
+        "bin/whups-convert-to-utf8",
+        "bin/whups-mail-filter",
+        "bin/whups-git-hook",
+        "bin/whups-convert-sql-shares-to-sqlng",
+        "bin/whups-bugzilla-import",
+        "bin/whups-obliterate",
+        "bin/whups-convert-datatree-shares-to-sql",
+        "bin/whups-reminders"
+    ]
 }
